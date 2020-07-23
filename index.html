@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oficina de Síntese de Som - Rochas de Marte</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script src="addons/p5.min.js"></script>
+    <script src="addons/p5.dom.min.js"></script>
+    <script src="addons/p5.sound.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/socket.io-client@2/dist/socket.io.js"></script>
+    <script language="javascript" type="text/javascript" src="KnobMakerC.js"></script>
+    <script type="text/javascript" src="OSC.js"></script>
+    <script type="text/javascript" src="sketch.js"></script>
+  </head>
+  <body>
+    <head>
+      <nav>
+      </nav>
+    </head>
+    <main>
+      <div id="abertura">
+
+        <div id="openTitle">
+          <p style="text-align: right; line-height: 1.6;">
+            <mark>Oficina</mark><br>
+            <mark>de</mark><br>
+            <mark>Síntese</mark><br>
+            <mark>de</mark><br>
+            <mark>Som</mark>
+          </p>
+        </div>
+
+        <div id="openUser">
+          <input id="userNameInput" type="text" name="name" value="" placeholder="Como posso te chamar?">
+          <button onclick="abrirMenu();" type="button" name="button">OK</button>
+        </div>
+        <div id="menuUser">
+          <h2 id="userName"></h2>
+
+          <button onclick="abrirOficina();" type="button" name="button">Oficina</button>
+          <button onclick="abrirLiveSet();" type="button" name="button">Live Set</button>
+          <button onclick="Jam();" type="button" name="button">Jam</button>
+          <button onclick="abrirOpcoes();" type="button" name="button">Opções</button>
+        </div>
+
+      </div>
+
+      <div id="botoes">
+        <div id="telaOficina" class="">
+
+          <button class="OficinaBotao" id="backBtn" onclick="abrirMenu();"
+          type="button" name="button" style="">
+            <b>&#8249;</b>
+          </button>
+
+          <button class="OficinaBotao" id="addBtn" onclick="janelaAddBlock();"
+          type="button" name="button" style="">
+            <b>+</b>
+          </button>
+
+          <button class="OficinaBotao" id="delBtn" onclick="delOSC();"
+          type="button" name="button" style="">
+            <b>-</b>
+          </button>
+
+          <button class="OficinaBotao" id="fullBtn" onclick="FullScreen();"
+          type="button" name="button" style="">
+            <b style="font-size: 0.8em;">&#9974;</b>
+          </button>
+
+          <div class="" id="janelaAdd">
+            Módulos:
+            <button class="OficinaBotao iconesStyle" onclick="addOSC();">
+              <b style="font-size: 0.8em;">OSC</b>
+            </button>
+            <button class="OficinaBotao iconesStyle" onclick="addDiv();">
+              <b style="font-size: 0.8em;">DIV</b>
+            </button>
+            <button class="OficinaBotao iconesStyle" onclick="addSeq();">
+              <b style="font-size: 0.8em;">SEQ</b>
+            </button>
+            <button class="OficinaBotao iconesStyle" onclick="addEnv();">
+              <b style="font-size: 0.8em;">ENV</b>
+            </button>
+            <button class="OficinaBotao iconesStyle" onclick="addFiltro();">
+              <b style="font-size: 0.8em;">FILTRO</b>
+            </button>
+            <button class="OficinaBotao iconesStyle" onclick="addNoise();">
+              <b style="font-size: 0.8em;">NOISE</b>
+            </button>
+
+          </div>
+          <button id="fechaAdd" class="OficinaBotao" onclick="janelaAddNone();">
+            <b style="float:right; font-size: 0.4em;">x</b>
+          </button>
+
+        </div>
+    </div>
+    <div id="jsHolder">
+    </div>
+    </main>
+  </body>
+</html>
